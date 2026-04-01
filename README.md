@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Contact ArthurP
 
-## Getting Started
+Page de contact centralisee pour les projets ArthurP avec stockage PostgreSQL et espace admin.
 
-First, run the development server:
+Site officiel: `https://contact.arthurp.fr`
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- API route `app/api/contact/route.ts`
+- Validation partagee avec Zod
+- PostgreSQL (stockage des messages)
+- Notifications via Nodemailer et Discord webhook (optionnel)
+- Dashboard admin avec authentification par cookie de session
+
+## Sites supportes
+
+- arthurp.fr
+- links.arthurp.fr
+- qcu.arthurp.fr
+- qrcode.arthurp.fr
+- lazybot.arthurp.fr
+- learn.arthurp.fr
+- sudoku.arthurp.fr
+- reducelink.arthurp.fr
+- clock.arthurp.fr
+- form.arthurp.fr
+- pomodoro.arthurp.fr
+- visio.arthurp.fr
+- doudou.arthurp.fr
+- portfolio.arthurp.fr
+- moon.arthurp.fr
+- calculatrice.arthurp.fr
+- chrono.arthurp.fr
+- blocnote.arthurp.fr
+- imprimersudoku.arthurp.fr
+
+## Variables d'environnement
+
+Copier `.env.example` vers `.env` puis completer:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Variables principales:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `CONTACT_TO_EMAIL` adresse recevant les messages
+- `CONTACT_FROM_EMAIL` expediteur technique
+- `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` pour l'envoi email
+- `DISCORD_WEBHOOK_URL` (optionnel)
+- `DATABASE_URL` URL PostgreSQL
+- `ADMIN_USERNAME`, `ADMIN_PASSWORD` credentials admin
+- `ADMIN_SESSION_SECRET` secret de signature de session admin
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Lancement en local
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Accessible sur `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dashboard admin: `http://localhost:3000/admin`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Exemples de liens:
 
-## Deploy on Vercel
+- `http://localhost:3000?project=lazybot`
+- `http://localhost:3000?project=qrcode`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Docker
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le projet fournit un Dockerfile multi-stage + Compose avec profils `dev` et `prod`.
+
+### Developpement (hot reload + PostgreSQL)
+
+```bash
+docker compose --profile dev up --build
+```
+
+### Production (app + PostgreSQL)
+
+```bash
+docker compose --profile prod up --build -d
+```
+
+Le build production utilise `output: "standalone"` pour une image plus propre et legere.
+
+## Pages legales
+
+- `/mentions-legales`
+- `/politique-confidentialite`
+- `/cgu`
+- `/cookies`
+
+## Verification qualite
+
+```bash
+npm run lint
+npm run build
+```
+
+## Securite deja en place
+
+- Validation client + serveur
+- Honeypot anti-spam
+- Limitation de requetes basique par IP
+- Secrets conserves via variables d'environnement
+- Session admin en cookie HttpOnly

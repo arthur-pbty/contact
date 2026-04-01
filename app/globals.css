@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f7fb;
+  --foreground: #0f172a;
+  --app-gradient: radial-gradient(circle at 20% 20%, #e0f2fe 0%, transparent 42%),
+    radial-gradient(circle at 80% 0%, #fef3c7 0%, transparent 38%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
 }
 
 @theme inline {
@@ -14,13 +17,36 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617;
+    --foreground: #e2e8f0;
+    --app-gradient: radial-gradient(circle at 10% 10%, #0f766e66 0%, transparent 38%),
+      radial-gradient(circle at 100% 0%, #1e293b 0%, transparent 38%),
+      linear-gradient(180deg, #020617 0%, #0f172a 100%);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.bg-app-gradient {
+  background-image: var(--app-gradient);
+  background-attachment: fixed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 420ms ease-out both;
 }

@@ -1,0 +1,54 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: contact-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-contact}
+      POSTGRES_USER: ${POSTGRES_USER:-contact}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-this-db-password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  contact-dev:
+    profiles: ["dev"]
+    build:
+      context: .
+      target: dev
+    container_name: contact-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      NEXT_TELEMETRY_DISABLED: "1"
+      DATABASE_URL: ${DATABASE_URL_DOCKER:-postgresql://contact:change-this-db-password@postgres:5432/contact}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-change-this-admin-password}
+      ADMIN_SESSION_SECRET: ${ADMIN_SESSION_SECRET:-change-this-session-secret}
+    depends_on:
+      - postgres
+
+  contact-prod:
+    profiles: ["prod"]
+    build:
+      context: .
+      target: runner
+    container_name: contact-prod
+    restart: unless-stopped
+    ports:
+      - "3018:3000"
+    env_file:
+      - .env
+    environment:
+      NEXT_TELEMETRY_DISABLED: "1"
+      DATABASE_URL: ${DATABASE_URL_DOCKER:-postgresql://contact:change-this-db-password@postgres:5432/contact}
+    depends_on:
+      - postgres
+
+volumes:
+  postgres-data:
