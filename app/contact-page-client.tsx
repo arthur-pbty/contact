@@ -440,13 +440,6 @@ export default function ContactPageClient() {
             <p className="mt-1">Fait avec ❤️ et auto-heberge sur Proxmox.</p>
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Docker</span>
-            <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Proxmox</span>
-            <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Next.js</span>
-            <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Node.js</span>
-          </div>
-
           <details className="mt-6 rounded-2xl border border-slate-200 bg-white/80 p-4 dark:border-slate-800 dark:bg-slate-900/60">
             <summary className="cursor-pointer text-sm font-medium text-slate-900 dark:text-white">Afficher les autres sites ArthurP</summary>
             <ul className="mt-4 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
