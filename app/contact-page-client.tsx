@@ -351,13 +351,13 @@ export default function ContactPageClient() {
 
           <a
             className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-cyan-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-950/50"
-            href="https://discord.gg/NbMWHh54bp"
+            href="https://contact.arthurp.fr"
             target="_blank"
             rel="noopener noreferrer"
           >
             <MessageCircle className="mb-2 h-5 w-5 text-slate-700 group-hover:text-cyan-600 dark:text-slate-200 dark:group-hover:text-cyan-300" />
-            <p className="font-medium text-slate-900 dark:text-white">Discord</p>
-            <p className="text-slate-600 dark:text-slate-400">Discussion rapide</p>
+            <p className="font-medium text-slate-900 dark:text-white">contact.arthurp.fr</p>
+            <p className="text-slate-600 dark:text-slate-400">Canal de contact principal</p>
           </a>
         </div>
       </section>
@@ -380,73 +380,90 @@ export default function ContactPageClient() {
       </section>
       </div>
 
-      <footer className="animate-fade-in w-full border-y border-slate-200 bg-white/90 text-sm text-slate-700 shadow-lg shadow-slate-900/5 dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300">
-        <div className="mx-auto w-full max-w-6xl p-6 sm:p-8">
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <p className="text-lg font-semibold text-slate-900 dark:text-white">ArthurP</p>
-              <p>Developpeur web & homelab</p>
-              <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
-                Fait avec ❤️ et auto-heberge sur Proxmox
-              </p>
-            </div>
-            <div className="grid gap-10 sm:grid-cols-[minmax(180px,0.75fr)_minmax(0,1.25fr)]">
-              <div>
-                <p className="mb-2 font-semibold text-slate-900 dark:text-white">Navigation</p>
-                <ul className="space-y-1">
-                  <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://arthurp.fr" target="_blank" rel="noopener noreferrer">Accueil</a></li>
-                  <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://portfolio.arthurp.fr" target="_blank" rel="noopener noreferrer">Projets</a></li>
-                  <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="mailto:contact@arthurp.fr">Contact</a></li>
-                </ul>
-              </div>
-              <div>
-                <p className="mb-2 font-semibold text-slate-900 dark:text-white">Sites</p>
-                <ul className="grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
-                  {footerSites.map((site) => (
-                    <li key={site.domain}>
-                      <a
-                        className="hover:text-cyan-600 dark:hover:text-cyan-300"
-                        href={`https://${site.domain}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {site.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+      <footer className="animate-fade-in w-full border-y border-slate-200 bg-linear-to-b from-white/95 to-slate-50 text-sm text-slate-700 shadow-lg shadow-slate-900/5 dark:border-slate-800 dark:from-slate-900/80 dark:to-slate-950 dark:text-slate-300">
+        <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-8 sm:py-12">
+          <div className="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/70 sm:p-6">
+            <p className="text-base font-semibold text-slate-900 dark:text-white">ArthurP</p>
+            <p className="mt-1 text-slate-600 dark:text-slate-400">Contact rapide et support projets via le hub de contact.</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <a
+                className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 transition hover:border-cyan-300 hover:text-cyan-700 dark:border-slate-700 dark:bg-slate-950/50 dark:text-slate-200 dark:hover:border-cyan-500 dark:hover:text-cyan-300"
+                href="https://contact.arthurp.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                contact.arthurp.fr
+              </a>
+              <a
+                className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 transition hover:border-cyan-300 hover:text-cyan-700 dark:border-slate-700 dark:bg-slate-950/50 dark:text-slate-200 dark:hover:border-cyan-500 dark:hover:text-cyan-300"
+                href="mailto:contact@arthurp.fr"
+              >
+                contact@arthurp.fr
+              </a>
             </div>
           </div>
+
+          <div className="mt-8 grid gap-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1fr)]">
+            <div>
+              <p className="text-lg font-semibold text-slate-900 dark:text-white">Navigation</p>
+              <ul className="mt-3 space-y-2">
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://arthurp.fr" target="_blank" rel="noopener noreferrer">Accueil</a></li>
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://portfolio.arthurp.fr" target="_blank" rel="noopener noreferrer">Projets</a></li>
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://contact.arthurp.fr" target="_blank" rel="noopener noreferrer">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-lg font-semibold text-slate-900 dark:text-white">Liens</p>
+              <ul className="mt-3 space-y-2">
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://arthurp.fr" target="_blank" rel="noopener noreferrer">arthurp.fr</a></li>
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://github.com/arthur-pbty" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="mailto:contact@arthurp.fr">contact@arthurp.fr</a></li>
+                <li><a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://contact.arthurp.fr" target="_blank" rel="noopener noreferrer">contact.arthurp.fr</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-lg font-semibold text-slate-900 dark:text-white">Legal</p>
+              <ul className="mt-3 space-y-2">
+                <li><Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/mentions-legales">Mentions legales</Link></li>
+                <li><Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/politique-confidentialite">Politique de confidentialite</Link></li>
+                <li><Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/cgu">CGU</Link></li>
+                <li><Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/cookies">Cookies</Link></li>
+                <li><Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/admin">Admin</Link></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-slate-200 pt-5 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
+            <p>© 2026 Arthur P. Tous droits reserves.</p>
+            <p className="mt-1">Fait avec ❤️ et auto-heberge sur Proxmox.</p>
+          </div>
+
           <div className="mt-6 flex flex-wrap gap-2 text-xs text-slate-500 dark:text-slate-400">
             <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Docker</span>
             <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Proxmox</span>
             <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Next.js</span>
             <span className="rounded-full border border-slate-200 px-2 py-1 dark:border-slate-700">Node.js</span>
           </div>
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs">
-            <a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="https://github.com/arthur-pbty" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a className="hover:text-cyan-600 dark:hover:text-cyan-300" href="mailto:contact@arthurp.fr">
-              Email
-            </a>
-            <Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/mentions-legales">
-              Mentions legales
-            </Link>
-            <Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/politique-confidentialite">
-              Confidentialite
-            </Link>
-            <Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/cgu">
-              CGU
-            </Link>
-            <Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/cookies">
-              Cookies
-            </Link>
-            <Link className="hover:text-cyan-600 dark:hover:text-cyan-300" href="/admin">
-              Admin
-            </Link>
-          </div>
+
+          <details className="mt-6 rounded-2xl border border-slate-200 bg-white/80 p-4 dark:border-slate-800 dark:bg-slate-900/60">
+            <summary className="cursor-pointer text-sm font-medium text-slate-900 dark:text-white">Afficher les autres sites ArthurP</summary>
+            <ul className="mt-4 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2">
+              {footerSites.map((site) => (
+                <li key={site.domain}>
+                  <a
+                    className="hover:text-cyan-600 dark:hover:text-cyan-300"
+                    href={`https://${site.domain}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {site.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
         </div>
       </footer>
     </div>

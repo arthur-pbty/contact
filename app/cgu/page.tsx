@@ -14,6 +14,10 @@ export default function CguPage() {
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Responsabilite</h2>
         <p>ArthurP ne peut etre tenu responsable des dommages indirects lies a l&apos;usage des services.</p>
       </section>
+      <section className="space-y-2">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Contact</h2>
+        <p>Pour toute demande relative aux CGU: contact.arthurp.fr ou contact@arthurp.fr.</p>
+      </section>
     </main>
   );
 }

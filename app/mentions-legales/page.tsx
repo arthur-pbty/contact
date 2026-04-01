@@ -5,6 +5,7 @@ export default function MentionsLegalesPage() {
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Editeur</h2>
         <p>ArthurP - Developpeur web & homelab</p>
+        <p>Site de contact: contact.arthurp.fr</p>
         <p>Email: contact@arthurp.fr</p>
       </section>
       <section className="space-y-2">
@@ -17,7 +18,7 @@ export default function MentionsLegalesPage() {
       </section>
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Contact</h2>
-        <p>Pour toute question legale: contact@arthurp.fr</p>
+        <p>Pour toute question legale: contact.arthurp.fr ou contact@arthurp.fr</p>
       </section>
     </main>
   );

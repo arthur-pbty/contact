@@ -19,7 +19,7 @@ export default function PolitiqueConfidentialitePage() {
       </section>
       <section className="space-y-2">
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Droits</h2>
-        <p>Vous pouvez demander acces, rectification ou suppression via contact@arthurp.fr.</p>
+        <p>Vous pouvez demander acces, rectification ou suppression via contact.arthurp.fr ou contact@arthurp.fr.</p>
       </section>
     </main>
   );

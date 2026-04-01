@@ -10,6 +10,10 @@ export default function CookiesPage() {
         <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Session admin</h2>
         <p>Le cookie admin est HttpOnly, SameSite=Lax et expire automatiquement.</p>
       </section>
+      <section className="space-y-2">
+        <h2 className="text-lg font-semibold text-slate-900 dark:text-white">Contact</h2>
+        <p>Pour toute question sur les cookies: contact.arthurp.fr ou contact@arthurp.fr.</p>
+      </section>
     </main>
   );
 }
